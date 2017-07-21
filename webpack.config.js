@@ -1,14 +1,10 @@
 /**
  * Created by echoLC on 2017/7/21.
  */
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-
-// var nodeModulesPath = path.resolve(__dirname, 'node_modules')
-// console.log(process.env.NODE_ENV)
+const path = require('path')
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'app/index.jsx'),
@@ -18,35 +14,39 @@ module.exports = {
     },
 
     resolve:{
-        extensions:['', '.js','.jsx']
+        extensions:[' ', '.js','.jsx']
     },
 
     module: {
-        // preLoaders: [
-        //     // 报错 ？？？？？
-        //     {test: /\.(js|jsx)$/, loader: "eslint-loader", exclude: /node_modules/}
-        // ],
-        loaders: [
-            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel' },
-            { test: /\.scss$/, exclude: /node_modules/, loader: 'style!css!postcss!sass' },
-            { test: /\.css$/, exclude: /node_modules/, loader: 'style!css!postcss' },
-            { test:/\.(png|gif|jpg|jpeg|bmp)$/i, loader:'url-loader?limit=5000' },  // 限制大小5kb
-            { test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i, loader:'url-loader?limit=5000'} // 限制大小小于5k
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                use: ['babel-loader']
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: ["css-loader", "sass-loader", "postcss-loader", "style-loader"]
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ['css-loader', 'postcss-loader', "style-loader"]
+            },
+            {
+                test:/\.(png|gif|jpg|jpeg|bmp)$/i,
+                use: ['url-loader?limit=5000']    // 限制大小5kb
+            },
+            {
+                test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+                use: ['url-loader?limit=5000']     // 限制大小小于5k
+            }
         ]
     },
-
-    eslint: {
-        configFile: '.eslintrc' // Rules for eslint
-    },
-
-    postcss: [
-        require('autoprefixer') //调用autoprefixer插件，例如 display: flex
-    ],
-
     plugins: [
         // html 模板插件
         new HtmlWebpackPlugin({
-            template: __dirname + '/app/index.tmpl.html'
+            template: __dirname + '/app/index.html'
         }),
 
         // 热加载插件
@@ -54,7 +54,7 @@ module.exports = {
 
         // 打开浏览器
         new OpenBrowserPlugin({
-            url: 'http://localhost:8080'
+            url: 'http://localhost:3000'
         }),
 
         // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
@@ -73,9 +73,9 @@ module.exports = {
             }
         },
         contentBase: "./public", //本地服务器所加载的页面所在的目录
-        colors: true, //终端中输出结果为彩色
         historyApiFallback: true, //不跳转
         inline: true, //实时刷新
-        hot: true  // 使用热加载插件 HotModuleReplacementPlugin
+        hot: true,  // 使用热加载插件 HotModuleReplacementPlugin
+        port: 3000
     }
 }

@@ -1,10 +1,10 @@
 /**
  * Created by echoLC on 2017/7/21.
  */
-var path = require('path')
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -28,29 +28,50 @@ module.exports = {
     },
 
     resolve:{
-        extensions:['', '.js','.jsx']
+        extensions:[' ', '.js','.jsx']
     },
 
     module: {
         loaders: [
-            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel' },
-            { test: /\.scss$/, exclude: /node_modules/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass') },
-            { test: /\.css$/, exclude: /node_modules/, loader: ExtractTextPlugin.extract('style', 'css!postcss') },
-            { test:/\.(png|gif|jpg|jpeg|bmp)$/i, loader:'url-loader?limit=5000&name=img/[name].[chunkhash:8].[ext]' },
-            { test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i, loader:'url-loader?limit=5000&name=fonts/[name].[chunkhash:8].[ext]'}
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader?cacheDirectory=true'
+                    }
+                },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    use: ["css-loader", "sass-loader", "postcss-loader", "style-loader"]
+                })
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract(
+                    {
+                        use: ['css-loader', 'postcss-loader', "style-loader"]
+                    })
+            } ,
+            {
+                test:/\.(png|gif|jpg|jpeg|bmp)$/i,
+                use:['url-loader?limit=5000&name=img/[name].[chunkhash:8].[ext]']
+            },
+            {
+                test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+                use: ['url-loader?limit=5000&name=fonts/[name].[chunkhash:8].[ext]']
+            }
         ]
     },
-    postcss: [
-        require('autoprefixer')
-    ],
-
     plugins: [
         // webpack 内置的 banner-plugin
         new webpack.BannerPlugin("Copyright by wangfupeng1988@github.com."),
 
         // html 模板插件
         new HtmlWebpackPlugin({
-            template: __dirname + '/app/index.tmpl.html'
+            template: __dirname + '/app/index.html'
         }),
 
         // 定义为生产环境，编译 React 时压缩到最小

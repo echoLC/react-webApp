@@ -4,15 +4,15 @@ import { Provider } from 'react-redux'
 import { hashHistory } from 'react-router'
 import configureStore from './store/configureStore'
 
-import './static/css/common.less'
-
-// 创建 Redux 的 store 对象
-const store = configureStore()
+// import './static/css/common.less'
 
 import RouteMap from './router/routeMap'
 
 import { testFetch } from './fetch/test.js'
 testFetch();
+
+// 创建 Redux 的 store 对象
+const store = configureStore()
 
 render(
     <Provider store={store}>
