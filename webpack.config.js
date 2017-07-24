@@ -76,7 +76,8 @@ module.exports = {
             // koa 代码在 ./mock 目录中，启动命令为 npm run mock
             '/api': {
                 target: 'http://localhost:3000',
-                secure: false
+                secure: false,
+                changeOrigin: true
             }
         },
         contentBase: "./public", //本地服务器所加载的页面所在的目录

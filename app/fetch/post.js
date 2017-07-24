@@ -6,8 +6,8 @@ import 'es6-promise'
 
 // 将对象拼接成 key1=val1&key2=val2&key3=val3 的字符串形式
 function obj2params(obj) {
-    var result = '';
-    var item;
+    let result = '';
+    let item;
     for (item in obj) {
         result += '&' + item + '=' + encodeURIComponent(obj[item]);
     }
@@ -21,7 +21,7 @@ function obj2params(obj) {
 
 // 发送 post 请求
 export function post(url, paramsObj) {
-    var result = fetch(url, {
+    let result = fetch(url, {
         method: 'POST',
         credentials: 'include',
         headers: {
