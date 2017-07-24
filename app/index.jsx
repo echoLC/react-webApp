@@ -1,6 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+// 通用样式
+import './static/css/common.scss'
+
 import Todo from './containers/Todo';
 
 // 性能测试

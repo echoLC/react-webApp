@@ -1,46 +1,45 @@
 import React from 'react'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import Input from '../components/Input'
 import List from '../components/List'
-import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-class Todo extends React.Component{
-    constructor(props){
-        super(props);
+class Todo extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
             todos: []
-        };
-        this.deleteFn = this.deleteFn.bind(this);
-        this.submitFn = this.submitFn.bind(this);
-        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+        }
     }
-
-    render(){
+    render() {
         return (
             <div>
-                <Input submitFn={this.submitFn}/>
-                <List todos={this.state.todos} deleteFn={this.deleteFn}/>
+                <Input submitFn={this.submitFn.bind(this)}/>
+                <List todos={this.state.todos} deleteFn={this.deleteFn.bind(this)}/>
             </div>
         )
     }
-
-    submitFn(value){
+    submitFn(value) {
         const id = this.state.todos.length;
-        let todos = this.state.todos;
-        todos.push({id: id, text: value});
-
+        let data = this.state.todos;
         this.setState({
-            todos: todos
+            todos: data.concat({
+                id: id,
+                text: value
+            })
         })
     }
-
-    deleteFn(index){
+    deleteFn(id) {
         let data = this.state.todos;
-        data.splice(index, 1);
         this.setState({
-            todos: data
+            todos:data.filter((item)=>{
+                if(item.id !== id){
+                    return item;
+                }
+            })
         })
     }
 }
 
-export default Todo;
+export default Todo
