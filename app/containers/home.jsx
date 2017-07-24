@@ -1,7 +1,7 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-class App extends React.Component {
+class Home extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -15,4 +15,4 @@ class App extends React.Component {
     }
 }
 
-export default App
+export default Home
