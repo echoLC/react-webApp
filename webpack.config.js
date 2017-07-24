@@ -26,12 +26,19 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: [ "style-loader", "css-loader", "sass-loader", "postcss-loader"]
+                use: [
+                    {loader: "style-loader"},
+                    {loader: "css-loader"},
+                    {loader: "sass-loader"},
+                    {loader: "postcss-loader"}],
             },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
-                use: ['css-loader', 'postcss-loader', "style-loader"]
+                use:  [
+                    {loader: "style-loader"},
+                    {loader: "css-loader"},
+                    {loader: "postcss-loader"}],
             },
             {
                 test:/\.(png|gif|jpg|jpeg|bmp)$/i,
