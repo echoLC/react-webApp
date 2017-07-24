@@ -2,6 +2,7 @@ import React from 'react'
 
 import Input from '../components/Input'
 import List from '../components/List'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 class Todo extends React.Component{
     constructor(props){
@@ -11,6 +12,7 @@ class Todo extends React.Component{
         };
         this.deleteFn = this.deleteFn.bind(this);
         this.submitFn = this.submitFn.bind(this);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
     render(){
