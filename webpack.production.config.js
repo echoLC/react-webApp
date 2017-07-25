@@ -18,12 +18,14 @@ module.exports = {
             'redux',
             'es6-promise',
             'whatwg-fetch',
-            'immutable'
+            'immutable',
+            'react-addons-pure-render-mixin',
+            'react-addons-css-transition-group'
         ]
     },
     output: {
         path: __dirname + "/build",
-        filename: "/js/[name].[chunkhash:8].js",
+        filename: "js/[name].[chunkhash:8].js",
         publicPath: '/'
     },
 
@@ -44,7 +46,11 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
-                    use: ["css-loader", "sass-loader", "postcss-loader", "style-loader"]
+                    fallback: 'style-loader',
+                    use: [
+                        {loader: "css-loader"},
+                        {loader: "sass-loader"},
+                        {loader: "postcss-loader"}]
                 })
             },
             {
@@ -52,7 +58,10 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract(
                     {
-                        use: ['css-loader', 'postcss-loader', "style-loader"]
+                        fallback: 'style-loader',
+                        use: [
+                            {loader: "css-loader"},
+                            {loader: "postcss-loader"}]
                     })
             } ,
             {
@@ -67,7 +76,7 @@ module.exports = {
     },
     plugins: [
         // webpack 内置的 banner-plugin
-        new webpack.BannerPlugin("Copyright by wangfupeng1988@github.com."),
+        new webpack.BannerPlugin("Copyright by echoLC@github.com."),
 
         // html 模板插件
         new HtmlWebpackPlugin({
@@ -82,7 +91,7 @@ module.exports = {
         }),
 
         // 为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
 
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -92,12 +101,12 @@ module.exports = {
         }),
 
         // 分离CSS和JS文件
-        new ExtractTextPlugin('/css/[name].[chunkhash:8].css'),
+        new ExtractTextPlugin('css/[name].[chunkhash:8].css'),
 
         // 提供公共代码
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            filename: '/js/[name].[chunkhash:8].js'
+            filename: 'js/[name].[chunkhash:8].js'
         }),
 
         // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
