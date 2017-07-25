@@ -40,6 +40,10 @@ class Todo extends React.Component {
             })
         })
     }
+
+    componentDidMount(){
+        console.log(this.props.location.query)
+    }
 }
 
 export default Todo

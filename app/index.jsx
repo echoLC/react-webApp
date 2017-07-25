@@ -6,19 +6,17 @@ import configureStore from './store/configureStore'
 
 import RouteMap from './router/routeMap'
 
-import Hello from './containers/Hello'
 const store = configureStore()
 
 // 通用样式
 import './static/css/common.scss'
+import './static/css/font.css'
 
-render(
-    <RouteMap history={hashHistory}/>,
+render (
+    <Provider store={store}>
+        <div>
+            <RouteMap history={hashHistory}/>
+        </div>
+    </Provider>,
     document.getElementById('root')
 )
-// render (
-//     <Provider store={store}>
-//         <Hello/>
-//     </Provider>,
-//     document.getElementById('root')
-// )
