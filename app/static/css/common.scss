@@ -5,3 +5,17 @@ body {
   }
   background-color: #e1e1f1;
 }
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+.clearfix:before{
+  content: '';
+  display: table;
+  clear: both;
+}

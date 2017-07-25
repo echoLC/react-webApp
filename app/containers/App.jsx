@@ -25,11 +25,13 @@ class App extends React.Component {
     componentDidMount(){
         //获取位置信息
         let cityName = LocalStore.getItem(CITYNAME);
-            cityName = cityName?cityName:'北京';
 
-            this.props.userInfoActions.update({
-                cityName: cityName
-            });
+        if(cityName == null){
+            cityName = '北京';
+        }
+        this.props.userInfoActions.update({
+            cityName: cityName
+        });
 
         //更改状态
         this.setState({
