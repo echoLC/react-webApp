@@ -61,7 +61,7 @@ module.exports = {
 
         // 打开浏览器
         new OpenBrowserPlugin({
-            url: 'http://localhost:3000'
+            url: 'http://localhost:5000'
         }),
 
         // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
@@ -84,6 +84,6 @@ module.exports = {
         historyApiFallback: true, //不跳转
         inline: true, //实时刷新
         hot: true,  // 使用热加载插件 HotModuleReplacementPlugin
-        port: 3000
+        port: 5000
     }
 }
