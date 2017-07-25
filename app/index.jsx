@@ -12,13 +12,13 @@ const store = configureStore()
 // 通用样式
 import './static/css/common.scss'
 
-// render(
-//     <RouteMap history={hashHistory}/>,
-//     document.getElementById('root')
-// )
-render (
-    <Provider store={store}>
-        <Hello/>
-    </Provider>,
+render(
+    <RouteMap history={hashHistory}/>,
     document.getElementById('root')
 )
+// render (
+//     <Provider store={store}>
+//         <Hello/>
+//     </Provider>,
+//     document.getElementById('root')
+// )
