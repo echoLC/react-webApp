@@ -31,7 +31,8 @@ module.exports = {
                     {loader: "style-loader"},
                     {loader: "css-loader"},
                     {loader: "sass-loader"},
-                    {loader: "postcss-loader"}],
+                    {loader: "postcss-loader"},
+                ],
             },
             {
                 test: /\.css$/,
@@ -42,12 +43,26 @@ module.exports = {
                     {loader: "postcss-loader"}],
             },
             {
-                test:/\.(png|gif|jpg|jpeg|bmp)$/i,
-                use: ['url-loader?limit=5000']    // 限制大小5kb
+                test:/\.(png|gif|jpg|jpeg|bmp)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 5000
+                        }
+                    }
+                ]
             },
             {
-                test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
-                use: ['url-loader?limit=5000']     // 限制大小小于5k
+                test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 5000
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -80,7 +95,7 @@ module.exports = {
                 secure: false
             }
         },
-        contentBase: "./public", //本地服务器所加载的页面所在的目录
+        contentBase: path.join(__dirname, "app"), //本地服务器所加载的页面所在的目录
         historyApiFallback: true, //不跳转
         inline: true, //实时刷新
         hot: true,  // 使用热加载插件 HotModuleReplacementPlugin
