@@ -9,7 +9,7 @@ class Category extends React.Component {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            index: 0
+            activeIndex: 0
         }
     }
     render() {
@@ -17,15 +17,17 @@ class Category extends React.Component {
             auto: 2000,
             callback: function (index) {
                 // 更新当前轮播图的index
-                this.setState({index: index});
+                this.setState({activeIndex: index});
             }.bind(this)
         }
+
+        let indexArray = ['', '', ''];
 
         return (
             <div id="home-category">
                 <ReactSwipe swipeOptions={opt}>
                     <div className="carousel-item">
-                        <ul className="clear-fix">
+                        <ul className="clearfix">
                             <li className="float-left jingdian">景点</li>
                             <li className="float-left ktv">KTV</li>
                             <li className="float-left gouwu">购物</li>
@@ -39,7 +41,7 @@ class Category extends React.Component {
                         </ul>
                     </div>
                     <div className="carousel-item">
-                        <ul className="clear-fix">
+                        <ul className="clearfix">
                             <li className="float-left meishi">美食</li>
                             <li className="float-left dianying">电影</li>
                             <li className="float-left jiudian">酒店</li>
@@ -53,7 +55,7 @@ class Category extends React.Component {
                         </ul>
                     </div>
                     <div className="carousel-item">
-                        <ul className="clear-fix">
+                        <ul className="clearfix">
                             <li className="float-left ribencai">日本菜</li>
                             <li className="float-left SPA">SPA</li>
                             <li className="float-left jiehun">结婚</li>
@@ -69,9 +71,11 @@ class Category extends React.Component {
                 </ReactSwipe>
                 <div className="index-container">
                     <ul>
-                        <li className={this.state.index === 0 ? "selected" : ''}></li>
-                        <li className={this.state.index === 1 ? "selected" : ''}></li>
-                        <li className={this.state.index === 2 ? "selected" : ''}></li>
+                        {
+                            indexArray.map((item, index)=>{
+                                return <li key={index} className={this.state.activeIndex === index ? 'selected' : ''}></li>
+                            })
+                        }
                     </ul>
                 </div>
             </div>

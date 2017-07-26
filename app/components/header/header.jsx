@@ -11,7 +11,7 @@ class Header extends React.Component{
 
     render(){
         return (
-            <div id="home-header" className="clear-fix">
+            <div id="home-header" className="clearfix">
                 <div className="home-header-left float-left">
                     <span>{this.props.cityName}</span>
                     &nbsp;
