@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import Header from '../../components/header/header'
 import Category from '../../components/category/category'
 import SubPage from  './subpage/Ad'
+import HomeList from './subpage/List'
 
 import { connect } from 'react-redux'
 
@@ -18,6 +19,7 @@ class Home extends React.Component {
                 <Category/>
                 <div style={{height: '15px'}}></div>
                 <SubPage/>
+                <HomeList/>
             </div>
         )
     }

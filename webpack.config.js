@@ -101,6 +101,7 @@ module.exports = {
         inline: true, //实时刷新
         hot: true,  // 使用热加载插件 HotModuleReplacementPlugin
         host: '0.0.0.0',
-        port: 5000
+        port: 5000,
+        disableHostCheck: true
     }
 }
