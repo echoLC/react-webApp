@@ -30,7 +30,7 @@ class SearchHeader extends React.Component{
     }
 
     enterHandle(value){
-        hashHistory.push('/search/all' + encodeURIComponent(value));
+        hashHistory.push('/search/all/' + encodeURIComponent(value));
     }
 }
 

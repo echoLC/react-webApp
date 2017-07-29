@@ -144,3 +144,55 @@ export function getListData(page) {
         }
     }
 }
+
+export function getSearchData(page, cityName, category, keyword){
+    console.log(`page: ${page}`);
+    console.log(`cityName: ${cityName}`);
+    console.log(`category: ${category}`);
+    console.log(`keyword: ${keyword}`);
+    return {
+        hasMore: true,
+        data: [
+            {
+                img: 'http://localhost:5000/static/img/list-garage-kit_icon.jpg',
+                title: '初二手办联盟',
+                subTitle: '工匠精心制作，良心价',
+                price: '368',
+                distance: '170m',
+                number: '783'
+            },
+            {
+                img: 'http://localhost:5000/static/img/list-diamond_icon.jpg',
+                title: '永金珠宝钻戒',
+                subTitle: '最实惠的价格，买到最满意的珠宝',
+                price: '5000-30000',
+                distance: '210m',
+                number: '120'
+            },
+            {
+                img: 'http://localhost:5000/static/img/list-peking-duck_icon.jpg',
+                title: '上水烤鸭',
+                subTitle: '不吃不知道，一吃忘不掉',
+                price: '30',
+                distance: '120m',
+                number: '534'
+            },
+            {
+                img: 'http://localhost:5000/static/img/list-cake_icon.jpg',
+                title: '巧克力蛋糕',
+                subTitle: '6英寸，适合2-3人',
+                price: '28',
+                distance: '150m',
+                number: '420'
+            },
+            {
+                img: 'http://localhost:5000/static/img/list-mixed-rice_icon.jpg',
+                title: '罗氏拌饭',
+                subTitle: '最正宗的韩国口味',
+                price: '25',
+                distance: '120m',
+                number: '621'
+            },
+        ]
+    }
+}
