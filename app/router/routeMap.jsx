@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute } from 'react-router'
 
 import App from '../containers/App'
 import Home from '../containers/home/home'
-import Todo from '../containers/Todo'
+import City from '../containers/city/city'
 import NotFound from '../containers/404'
 
 class RouteMap extends React.Component {
@@ -15,7 +15,7 @@ class RouteMap extends React.Component {
             <Router history={this.props.history} onUpdate={this.updateHandle.bind(this)}>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home}/>
-                    <Route path="/Todo" component={Todo}/>
+                    <Route path="/city" component={City}/>
                     <Route path="*" component={NotFound}/>
                 </Route>
             </Router>

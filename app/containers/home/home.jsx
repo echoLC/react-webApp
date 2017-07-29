@@ -1,6 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import Header from '../../components/header/header'
+import Header from '../../components/home-header/header'
 import Category from '../../components/category/category'
 import SubPage from  './subpage/Ad'
 import HomeList from './subpage/List'
