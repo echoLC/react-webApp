@@ -11,6 +11,8 @@ const store = configureStore()
 // 通用样式
 import './static/css/common.scss'
 import './static/css/font.css'
+import 'antd-mobile/dist/antd-mobile.css'
+
 
 render (
     <Provider store={store}>

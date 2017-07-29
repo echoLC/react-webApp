@@ -8,7 +8,12 @@
           "imports": ["react"],
           "locals": ["module"]
         }]
-      }]]
+      },
+        {
+          "libraryName": "antd-mobile",
+          "style": "css"
+        }
+      ]]
     }
   }
 }

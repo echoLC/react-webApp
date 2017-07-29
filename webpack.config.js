@@ -14,14 +14,24 @@ module.exports = {
     },
 
     resolve:{
-        extensions:[' ', '.js','.jsx']
+        extensions:[' ', '.web.tsx', '.web.ts', '.web.jsx', '.web.js', '.ts', '.tsx', '.js', '.jsx', '.json']
     },
 
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: ['babel-loader'],
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            plugins: [["import", {
+                                "libraryName": "antd",
+                                "style": 'css',
+                            }]]
+                        }
+                    }
+                ],
                 exclude: /node_modules/
             },
             {
@@ -36,7 +46,6 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
                 use:  [
                     {loader: "style-loader"},
                     {loader: "css-loader"},
