@@ -60,7 +60,8 @@ export function getListData(page) {
                     subTitle: '叫我汉堡大大，还你多彩口味',
                     price: '28',
                     distance: '120m',
-                    number: '389'
+                    number: '389',
+                    id: '1'
                 },
                 {
                     img: 'http://localhost:5000/static/img/list-hotel_icon.jpg',
@@ -68,7 +69,8 @@ export function getListData(page) {
                     subTitle: '[望京]自助晚餐',
                     price: '98',
                     distance: '140m',
-                    number: '689'
+                    number: '689',
+                    id: '2'
                 },
                 {
                     img: 'http://localhost:5000/static/img/business-suit_icon.jpg',
@@ -84,7 +86,8 @@ export function getListData(page) {
                     subTitle: '免费试穿，拍照留念',
                     price: '2899',
                     distance: '160',
-                    number: '58'
+                    number: '58',
+                    id: '3'
                 },
                 {
                     img: 'http://localhost:5000/static/img/list-stick-food_icon.jpg',
@@ -92,7 +95,8 @@ export function getListData(page) {
                     subTitle: '双人免费套餐等你抢购',
                     price: '0',
                     distance: '160',
-                    number: '1426'
+                    number: '1426',
+                    id: '4'
                 }
             ]
         }
@@ -106,7 +110,8 @@ export function getListData(page) {
                     subTitle: '工匠精心制作，良心价',
                     price: '368',
                     distance: '170m',
-                    number: '783'
+                    number: '783',
+                    id: '5'
                 },
                 {
                     img: 'http://localhost:5000/static/img/list-diamond_icon.jpg',
@@ -114,7 +119,8 @@ export function getListData(page) {
                     subTitle: '最实惠的价格，买到最满意的珠宝',
                     price: '5000-30000',
                     distance: '210m',
-                    number: '120'
+                    number: '120',
+                    id: '6'
                 },
                 {
                     img: 'http://localhost:5000/static/img/list-peking-duck_icon.jpg',
@@ -122,7 +128,8 @@ export function getListData(page) {
                     subTitle: '不吃不知道，一吃忘不掉',
                     price: '30',
                     distance: '120m',
-                    number: '534'
+                    number: '534',
+                    id: '7'
                 },
                 {
                     img: 'http://localhost:5000/static/img/list-cake_icon.jpg',
@@ -130,7 +137,8 @@ export function getListData(page) {
                     subTitle: '6英寸，适合2-3人',
                     price: '28',
                     distance: '150m',
-                    number: '420'
+                    number: '420',
+                    id: '8'
                 },
                 {
                     img: 'http://localhost:5000/static/img/list-mixed-rice_icon.jpg',
@@ -138,7 +146,8 @@ export function getListData(page) {
                     subTitle: '最正宗的韩国口味',
                     price: '25',
                     distance: '120m',
-                    number: '621'
+                    number: '621',
+                    id: '9'
                 },
             ]
         }
@@ -159,7 +168,8 @@ export function getSearchData(page, cityName, category, keyword){
                 subTitle: '工匠精心制作，良心价',
                 price: '368',
                 distance: '170m',
-                number: '783'
+                number: '783',
+                id: '1'
             },
             {
                 img: 'http://localhost:5000/static/img/list-diamond_icon.jpg',
@@ -167,7 +177,8 @@ export function getSearchData(page, cityName, category, keyword){
                 subTitle: '最实惠的价格，买到最满意的珠宝',
                 price: '5000-30000',
                 distance: '210m',
-                number: '120'
+                number: '120',
+                id: '2'
             },
             {
                 img: 'http://localhost:5000/static/img/list-peking-duck_icon.jpg',
@@ -175,7 +186,8 @@ export function getSearchData(page, cityName, category, keyword){
                 subTitle: '不吃不知道，一吃忘不掉',
                 price: '30',
                 distance: '120m',
-                number: '534'
+                number: '534',
+                id: '3'
             },
             {
                 img: 'http://localhost:5000/static/img/list-cake_icon.jpg',
@@ -183,7 +195,8 @@ export function getSearchData(page, cityName, category, keyword){
                 subTitle: '6英寸，适合2-3人',
                 price: '28',
                 distance: '150m',
-                number: '420'
+                number: '420',
+                id: '4'
             },
             {
                 img: 'http://localhost:5000/static/img/list-mixed-rice_icon.jpg',
@@ -191,7 +204,8 @@ export function getSearchData(page, cityName, category, keyword){
                 subTitle: '最正宗的韩国口味',
                 price: '25',
                 distance: '120m',
-                number: '621'
+                number: '621',
+                id: '5'
             },
         ]
     }
