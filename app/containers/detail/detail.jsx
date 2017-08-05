@@ -2,6 +2,7 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import Header from '../../components/Header/Header';
 import Info from './subpage/info';
+import Comment from './subpage/comment';
 
 class Detail extends React.Component{
     constructor(props, context){
@@ -14,6 +15,7 @@ class Detail extends React.Component{
             <div>
                 <Header title="详情页"/>
                 <Info id={id}/>
+                <Comment id={id}/>
             </div>
         )
     }
