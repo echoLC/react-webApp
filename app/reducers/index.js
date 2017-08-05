@@ -4,9 +4,11 @@
 import {combineReducers} from 'redux'
 
 import userInfo from './userinfo'
+import store from './store';
 
 const rootReducer = combineReducers({
-    userInfo
+    userInfo,
+    store
 })
 
 export default rootReducer
