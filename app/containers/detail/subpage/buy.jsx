@@ -65,7 +65,7 @@ class Buy extends React.Component{
         if(!loginState){
            return;
         }
-        hashHistory.push('/user');
+        hashHistory.push('/order');
     }
 
     storeHandle(){

@@ -9,6 +9,7 @@ import Search from '../containers/search/search';
 import Detail from '../containers/detail/detail';
 import Login from '../containers/Login/Login';
 import User from '../containers/user/User';
+import Order from '../containers/Order/Order';
 
 class RouteMap extends React.Component {
     updateHandle() {
@@ -24,6 +25,7 @@ class RouteMap extends React.Component {
                     <Route path="/detail/:id" component={Detail}/>
                     <Route path="/login(/:router)" component={Login}/>
                     <Route path="/user" component={User}/>
+                    <Route path="/order" component={Order}/>
                     <Route path="*" component={NotFound}/>
                 </Route>
             </Router>
