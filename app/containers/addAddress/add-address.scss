@@ -1,0 +1,33 @@
+.add-address-container{
+  .add-address-form{
+    padding-left: 14px;
+    padding-top: 14px;
+    .distance{
+      height: 12px;
+    }
+    input{
+        width: 60%;
+        height: 34px;
+        padding-left: 12px;
+        line-height: 1.42857143;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    label{
+      display: inline-block;
+      width: 80px;
+    }
+    button{
+      font-size: 16px;
+      width: 100px;
+      background-color: #f1f1f1;
+      color: #666;
+      border: 1px solid #666;
+      padding: 5px 0;
+    }
+    .submit-btn{
+      text-align: center;
+      padding-top: 50px;
+    }
+  }
+}

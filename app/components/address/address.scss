@@ -1,0 +1,18 @@
+.address-container{
+  .user-address-info{
+    text-align: center;
+    padding-top: 14px;
+    .add-newAddress-btn{
+      font-size: 16px;
+      width: 100px;
+      background-color: #f1f1f1;
+      color: #666;
+      border: 1px solid #666;
+      padding: 5px 0;
+    }
+  }
+  .user-detail-info{
+    padding-left: 14px;
+    text-align: left;
+  }
+}
