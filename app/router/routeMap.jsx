@@ -14,12 +14,9 @@ import ManageAddress from '../containers/manageAddress/manageAddress';
 import AddAddress from '../containers/addAddress/addAddress';
 
 class RouteMap extends React.Component {
-    updateHandle() {
-        console.log('每次router变化之后都会触发')
-    }
     render() {
         return (
-            <Router history={this.props.history} onUpdate={this.updateHandle.bind(this)}>
+            <Router history={this.props.history}>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home}/>
                     <Route path="/city" component={City}/>

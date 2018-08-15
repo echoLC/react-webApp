@@ -15,10 +15,10 @@ import 'antd-mobile/dist/antd-mobile.css'
 
 
 render (
-    <Provider store={store}>
-        <div>
-            <RouteMap history={hashHistory}/>
-        </div>
-    </Provider>,
-    document.getElementById('root')
+  <Provider store={ store }>
+    <div>
+      <RouteMap history={hashHistory}/>
+    </div>
+  </Provider>,
+  document.getElementById('root')
 )
