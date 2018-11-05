@@ -6,18 +6,17 @@ import configureStore from './store/configureStore'
 
 import RouteMap from './router/routeMap'
 
-const store = configureStore()
-
 // 通用样式
 import './static/css/common.scss'
 import './static/css/font.css'
 import 'antd-mobile/dist/antd-mobile.css'
 
+const store = configureStore()
 
-render (
-  <Provider store={ store }>
+render(
+  <Provider store={store}>
     <div>
-      <RouteMap history={hashHistory}/>
+      <RouteMap history={hashHistory} />
     </div>
   </Provider>,
   document.getElementById('root')

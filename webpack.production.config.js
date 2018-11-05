@@ -2,9 +2,9 @@
  * Created by echoLC on 2017/7/21.
  */
 const path = require('path')
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: {
@@ -24,13 +24,13 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname + "/build",
-        filename: "js/[name].[chunkhash:8].js",
+        path: __dirname + '/build',
+        filename: 'js/[name].[hash:8].js',
         publicPath: '/'
     },
 
-    resolve:{
-        extensions:[' ', '.js','.jsx']
+    resolve: {
+        extensions: [' ', '.js', '.jsx']
     },
 
     module: {
@@ -48,35 +48,34 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
-                        {loader: "css-loader"},
-                        {loader: "sass-loader"},
-                        {loader: "postcss-loader"}]
+                        {loader: 'css-loader'},
+                        {loader: 'sass-loader'},
+                        {loader: 'postcss-loader'}]
                 })
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
                 use: ExtractTextPlugin.extract(
                     {
                         fallback: 'style-loader',
                         use: [
-                            {loader: "css-loader"},
-                            {loader: "postcss-loader"}]
+                            {loader: 'css-loader'},
+                            {loader: 'postcss-loader'}]
                     })
-            } ,
-            {
-                test:/\.(png|gif|jpg|jpeg|bmp)$/i,
-                use:['url-loader?limit=5000&name=img/[name].[chunkhash:8].[ext]']
             },
             {
-                test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
-                use: ['url-loader?limit=5000&name=fonts/[name].[chunkhash:8].[ext]']
+                test: /\.(png|gif|jpg|jpeg|bmp)$/i,
+                use: ['url-loader?limit=5000&name=img/[name].[hash:8].[ext]']
+            },
+            {
+                test: /\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+                use: ['url-loader?limit=5000&name=fonts/[name].[hash:8].[ext]']
             }
         ]
     },
     plugins: [
         // webpack 内置的 banner-plugin
-        new webpack.BannerPlugin("Copyright by echoLC@github.com."),
+        new webpack.BannerPlugin('Copyright by echoLC@github.com.'),
 
         // html 模板插件
         new HtmlWebpackPlugin({
@@ -85,7 +84,7 @@ module.exports = {
 
         // 定义为生产环境，编译 React 时压缩到最小
         new webpack.DefinePlugin({
-            'process.env':{
+            'process.env': {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
         }),
@@ -95,23 +94,23 @@ module.exports = {
 
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-                //supresses warnings, usually from module minification
+                // supresses warnings, usually from module minification
                 warnings: false
             }
         }),
 
         // 分离CSS和JS文件
-        new ExtractTextPlugin('css/[name].[chunkhash:8].css'),
+        new ExtractTextPlugin('css/[name].[hash:8].css'),
 
         // 提供公共代码
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            filename: 'js/[name].[chunkhash:8].js'
+            filename: 'js/[name].[hash:8].js'
         }),
 
         // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
         new webpack.DefinePlugin({
-            __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev') || 'false'))
+            __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV === 'dev') || 'false'))
         })
     ]
 }

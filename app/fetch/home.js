@@ -3,59 +3,59 @@
  */
 import { get } from './get'
 
-export function getAdData() {
+export function getAdData () {
     // const result = get('/api/homead')
     // return result
     return [
         {
             title: '暑假5折',
-            img: 'http://localhost:3000/static/img/ad-ice-cream_icon.jpg',
+            img: '/static/img/ad-ice-cream_icon.jpg',
             link: 'https://github.com/echoLC'
         },
         {
             title: '特价出国',
-            img: 'http://localhost:3000/static/img/ad-travel_icon.jpg',
+            img: '/static/img/ad-travel_icon.jpg',
             link: 'https://github.com/echoLC'
         },
         {
             title: '亮亮车',
-            img: 'http://localhost:3000/static/img/ad-car_icon.jpg',
+            img: '/static/img/ad-car_icon.jpg',
             link: 'https://github.com/echoLC'
         },
         {
             title: '学钢琴',
-            img: 'http://localhost:3000/static/img/ad-piano_icon.jpg',
+            img: '/static/img/ad-piano_icon.jpg',
             link: 'https://github.com/echoLC'
         },
         {
             title: '电影',
-            img: 'http://localhost:3000/static/img/ad-film_icon.jpg',
+            img: '/static/img/ad-film_icon.jpg',
             link: 'https://github.com/echoLC'
         },
         {
             title: '旅游热线',
-            img: 'http://localhost:3000/static/img/ad-tour-around_icon.jpg',
+            img: '/static/img/ad-tour-around_icon.jpg',
             link: 'https://github.com/echoLC'
         }
     ]
 }
 
-export function getListData(page) {
+export function getListData (page) {
     // const result = get('/api/homelist/' + encodeURIComponent(city) + '/' + page)
     // return result
-    if(page > 10){
+    if (page > 10) {
         return {
             hasMore: false,
             data: []
         }
     }
 
-    if(page%2 === 0){
-        return  {
+    if (page % 2 === 0) {
+        return {
             hasMore: true,
             data: [
                 {
-                    img: 'http://localhost:3000/static/img/list-hamburger_icon.jpg',
+                    img: '/static/img/list-hamburger_icon.jpg',
                     title: '汉堡大大',
                     subTitle: '叫我汉堡大大，还你多彩口味',
                     price: '28',
@@ -64,7 +64,7 @@ export function getListData(page) {
                     id: '1'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/list-hotel_icon.jpg',
+                    img: '/static/img/list-hotel_icon.jpg',
                     title: '北京开源饭店',
                     subTitle: '[望京]自助晚餐',
                     price: '98',
@@ -73,7 +73,7 @@ export function getListData(page) {
                     id: '2'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/business-suit_icon.jpg',
+                    img: '/static/img/business-suit_icon.jpg',
                     title: '服装定制',
                     subTitle: '原价xx元，现价xx元，可修改一次',
                     price: '1980',
@@ -81,7 +81,7 @@ export function getListData(page) {
                     number: '106'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/list-marrage_icon.jpg',
+                    img: '/static/img/list-marrage_icon.jpg',
                     title: '婚纱摄影',
                     subTitle: '免费试穿，拍照留念',
                     price: '2899',
@@ -90,7 +90,7 @@ export function getListData(page) {
                     id: '3'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/list-stick-food_icon.jpg',
+                    img: '/static/img/list-stick-food_icon.jpg',
                     title: '麻辣串串烧',
                     subTitle: '双人免费套餐等你抢购',
                     price: '0',
@@ -100,12 +100,12 @@ export function getListData(page) {
                 }
             ]
         }
-    }else {
+    } else {
         return {
             hasMore: true,
             data: [
                 {
-                    img: 'http://localhost:3000/static/img/list-garage-kit_icon.jpg',
+                    img: '/static/img/list-garage-kit_icon.jpg',
                     title: '初二手办联盟',
                     subTitle: '工匠精心制作，良心价',
                     price: '368',
@@ -114,7 +114,7 @@ export function getListData(page) {
                     id: '5'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/list-diamond_icon.jpg',
+                    img: '/static/img/list-diamond_icon.jpg',
                     title: '永金珠宝钻戒',
                     subTitle: '最实惠的价格，买到最满意的珠宝',
                     price: '5000-30000',
@@ -123,7 +123,7 @@ export function getListData(page) {
                     id: '6'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/list-peking-duck_icon.jpg',
+                    img: '/static/img/list-peking-duck_icon.jpg',
                     title: '上水烤鸭',
                     subTitle: '不吃不知道，一吃忘不掉',
                     price: '30',
@@ -132,7 +132,7 @@ export function getListData(page) {
                     id: '7'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/list-cake_icon.jpg',
+                    img: '/static/img/list-cake_icon.jpg',
                     title: '巧克力蛋糕',
                     subTitle: '6英寸，适合2-3人',
                     price: '28',
@@ -141,29 +141,29 @@ export function getListData(page) {
                     id: '8'
                 },
                 {
-                    img: 'http://localhost:3000/static/img/list-mixed-rice_icon.jpg',
+                    img: '/static/img/list-mixed-rice_icon.jpg',
                     title: '罗氏拌饭',
                     subTitle: '最正宗的韩国口味',
                     price: '25',
                     distance: '120m',
                     number: '621',
                     id: '9'
-                },
+                }
             ]
         }
     }
 }
 
-export function getSearchData(page, cityName, category, keyword){
-    console.log(`page: ${page}`);
-    console.log(`cityName: ${cityName}`);
-    console.log(`category: ${category}`);
-    console.log(`keyword: ${keyword}`);
+export function getSearchData (page, cityName, category, keyword) {
+    console.log(`page: ${page}`)
+    console.log(`cityName: ${cityName}`)
+    console.log(`category: ${category}`)
+    console.log(`keyword: ${keyword}`)
     return {
         hasMore: true,
         data: [
             {
-                img: 'http://localhost:3000/static/img/list-garage-kit_icon.jpg',
+                img: '/static/img/list-garage-kit_icon.jpg',
                 title: '初二手办联盟',
                 subTitle: '工匠精心制作，良心价',
                 price: '368',
@@ -172,7 +172,7 @@ export function getSearchData(page, cityName, category, keyword){
                 id: '1'
             },
             {
-                img: 'http://localhost:3000/static/img/list-diamond_icon.jpg',
+                img: '/static/img/list-diamond_icon.jpg',
                 title: '永金珠宝钻戒',
                 subTitle: '最实惠的价格，买到最满意的珠宝',
                 price: '5000-30000',
@@ -181,7 +181,7 @@ export function getSearchData(page, cityName, category, keyword){
                 id: '2'
             },
             {
-                img: 'http://localhost:3000/static/img/list-peking-duck_icon.jpg',
+                img: '/static/img/list-peking-duck_icon.jpg',
                 title: '上水烤鸭',
                 subTitle: '不吃不知道，一吃忘不掉',
                 price: '30',
@@ -190,7 +190,7 @@ export function getSearchData(page, cityName, category, keyword){
                 id: '3'
             },
             {
-                img: 'http://localhost:3000/static/img/list-cake_icon.jpg',
+                img: '/static/img/list-cake_icon.jpg',
                 title: '巧克力蛋糕',
                 subTitle: '6英寸，适合2-3人',
                 price: '28',
@@ -199,14 +199,14 @@ export function getSearchData(page, cityName, category, keyword){
                 id: '4'
             },
             {
-                img: 'http://localhost:3000/static/img/list-mixed-rice_icon.jpg',
+                img: '/static/img/list-mixed-rice_icon.jpg',
                 title: '罗氏拌饭',
                 subTitle: '最正宗的韩国口味',
                 price: '25',
                 distance: '120m',
                 number: '621',
                 id: '5'
-            },
+            }
         ]
     }
 }

@@ -2,3 +2,5 @@
 /config/
 /dist/
 /test/unit/coverage/
+./webpack.config.js
+./webpack.production.config.js

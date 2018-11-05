@@ -1,9 +1,9 @@
 /**
  * Created by echoLC on 2017/8/5.
  */
-export function getCommentData(page, id) {
-    console.log(`页数为${page}`);
-    console.log(`商户ID为${id}`);
+export function getCommentData (page, id) {
+    console.log(`页数为${page}`)
+    console.log(`商户ID为${id}`)
     return {
         hasMore: true,
         data: [

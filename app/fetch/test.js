@@ -3,6 +3,6 @@
  */
 import { get } from './get.js'
 
-export function testFetch() {
+export function testFetch () {
     return get('/api/1')
 }
